@@ -1,0 +1,54 @@
+#Thu Nov 19 16:31:43 EST 2015
+name=PreprocessReadCounts
+commandLine=<R3.1_Rscript> --no-save --quiet --slave --no-restore <libdir>run_gp_preprocess_read_counts.R <libdir> \
+    --input.file\=<input.file> --cls.file\=<cls.file> --output.file\=<output.file> 
+license=
+taskDoc=doc.html
+fileFormat=gct
+taskType=Preprocess & Utilities
+os=any
+quality=preproduction
+privacy=public
+description=Performs several preprocessing steps on RNA-Seq count data in a GCT file.
+version=
+minGenePatternVersion=
+language=R3.1.3
+author=Arthur Liberzon, David Eby, Broad Institute
+
+p1_default_value=
+p1_description=A GCT file containing raw RNA-Seq counts, such as is produced by MergeHTSeqCounts
+p1_fileFormat=gct
+p1_numValues=1
+p1_MODE=IN
+p1_name=input.file
+p1_optional=
+p1_prefix_when_specified=
+p1_TYPE=FILE
+p1_type=java.io.File
+p1_value=
+
+p2_default_value=
+p2_description=A CLS file specifying the phenotype classes for the samples in the GCT file.  
+p2_fileFormat=cls
+p2_numValues=1
+p2_MODE=IN
+p2_name=cls.file
+p2_optional=
+p2_prefix_when_specified=
+p2_TYPE=FILE
+p2_type=java.io.File
+p2_value=
+
+p3_default_value=<input.file_basename>.preprocessed.gct
+p3_description=Output file name
+p3_name=output.file
+p3_optional=
+p3_prefix_when_specified=
+p3_type=java.lang.String
+p3_value=
+
+requiredPatchLSIDs=
+requiredPatchURLs=
+
+LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00346\:999999999
+publicationDate=11/19/2015 16\:31 
