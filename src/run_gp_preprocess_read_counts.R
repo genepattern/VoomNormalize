@@ -23,6 +23,7 @@ option_list <- list(
   make_option("--input.file", dest="input.file"),
   make_option("--cls.file", dest="cls.file"),
   make_option("--voom.transform", dest="voom.transform", type="logical", default=TRUE), # Not passed from commandLine for now
+  make_option("--expression.value.filter.threshold", dest="expression.value.filter.threshold", type="numeric"),
   make_option("--output.file", dest="output.file")
   )
 
@@ -33,10 +34,13 @@ opts <- opt$options
 source(file.path(libdir, "common.R"))
 source(file.path(libdir, "gp_preprocess_read_counts.R"))
 
+expression.value.filter.threshold <- as.numeric(opts$expression.value.filter.threshold)
+
 # Load the GCT and CLS.
 gct <- read.gct(opts$input.file)
 cls <- read.cls(opts$cls.file)
 
-GP.preprocess.read.counts(gct, cls, opts$voom.transform, opts$output.file)
+GP.preprocess.read.counts(gct, cls, opts$voom.transform, 
+                          expression.value.filter.threshold, opts$output.file)
 
 sessionInfo()
