@@ -12,7 +12,8 @@ suppressMessages(suppressWarnings(library(limma)))
 suppressMessages(suppressWarnings(library(edgeR)))
 
 # Assumes GenePattern's common.R has been sourced, for functions to read/write GCT & CLS.
-GP.preprocess.read.counts <- function(gct, cls, voom.transform, output.file) {
+GP.preprocess.read.counts <- function(gct, cls, voom.transform, 
+                                      expression.value.filter.threshold, output.file) {
 
    # Filter out the rows with non-expressed genes from the GCT.
    #    from PMID=23975260
@@ -36,8 +37,9 @@ GP.preprocess.read.counts <- function(gct, cls, voom.transform, output.file) {
    #                                   # same length with TRUE or FALSE depending on match or no.
    #    ) }))              # Close all parens
 
-   # Finally, filter the rows.  This will give us a vector of the rows that pass the filter.
-   i <- rowSums(cpms > 1) >= smallestGroup
+   # Finally, filter out any rows where the genes are not expressed above the cutoff threshold. 
+   # This will give us a vector of the rows that pass the filter.
+   i <- rowSums(cpms > expression.value.filter.threshold) >= smallestGroup
 
    # construct DGEList object.  Note that we use the RAW COUNTS from the original GCT here rather
    # than the CPMs computed above.  The 'voom' call expects raw counts...

@@ -1,7 +1,8 @@
 #Thu Nov 19 16:31:43 EST 2015
 name=PreprocessReadCounts
 commandLine=<R3.1_Rscript> --no-save --quiet --slave --no-restore <libdir>run_gp_preprocess_read_counts.R <libdir> \
-    --input.file\=<input.file> --cls.file\=<cls.file> --output.file\=<output.file> 
+    --input.file\=<input.file> --cls.file\=<cls.file> --output.file\=<output.file> \
+    --expression.value.filter.threshold=<expression.value.filter.threshold>
 license=
 taskDoc=doc.html
 fileFormat=gct
@@ -39,13 +40,21 @@ p2_TYPE=FILE
 p2_type=java.io.File
 p2_value=
 
-p3_default_value=<input.file_basename>.preprocessed.gct
-p3_description=Output file name
-p3_name=output.file
+p3_default_value=1
+p3_description=Threshold to use when filtering CPM expression values; rows are kept only if the values (in CPM) for all columns are greater than this threshold
+p3_name=expression.value.filter.threshold
 p3_optional=
 p3_prefix_when_specified=
-p3_type=java.lang.String
+p3_type=java.lang.Float
 p3_value=
+
+p4_default_value=<input.file_basename>.preprocessed.gct
+p4_description=Output file name
+p4_name=output.file
+p4_optional=
+p4_prefix_when_specified=
+p4_type=java.lang.String
+p4_value=
 
 requiredPatchLSIDs=
 requiredPatchURLs=
