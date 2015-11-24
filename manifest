@@ -40,20 +40,20 @@ p2_TYPE=FILE
 p2_type=java.io.File
 p2_value=
 
-p3_default_value=1
-p3_description=Threshold to use when filtering CPM expression values; rows are kept only if the values (in CPM) for all columns are greater than this threshold
-p3_name=expression.value.filter.threshold
+p3_default_value=<input.file_basename>.preprocessed.gct
+p3_description=Output file name
+p3_name=output.file
 p3_optional=
 p3_prefix_when_specified=
-p3_type=java.lang.Float
+p3_type=java.lang.String
 p3_value=
 
-p4_default_value=<input.file_basename>.preprocessed.gct
-p4_description=Output file name
-p4_name=output.file
+p4_default_value=1
+p4_description=Threshold to use when filtering CPM expression values; rows are kept only if the values (in CPM) for all columns are greater than this threshold
+p4_name=expression.value.filter.threshold
 p4_optional=
 p4_prefix_when_specified=
-p4_type=java.lang.String
+p4_type=java.lang.Float
 p4_value=
 
 requiredPatchLSIDs=
