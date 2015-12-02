@@ -17,7 +17,7 @@ GP.preprocess.read.counts <- function(gct, cls, voom.transform,
 
    # Filter out the rows with non-expressed genes from the GCT.
    #    from PMID=23975260
-   #    "remove features with at least 1 read per million in n of the samples,
+   #    "remove features without at least 1 read per million in n of the samples,
    #     where n is the size of the smallest group of replicates"
    # For simplicity, consider only genes expressed in all samples (replicates)
    
@@ -45,7 +45,8 @@ GP.preprocess.read.counts <- function(gct, cls, voom.transform,
    # than the CPMs computed above.  The 'voom' call expects raw counts...
    cds <- DGEList(gct$data[i, ], group = cls$labels, genes = gct$row.descriptions[i])
 
-   # ... though we will do a TMM normalization step on the raw counts first.  
+   # ... though we will do a TMM normalization step on the raw counts first.
+   # Note that future versions may permit other normalization methods.
    d <- calcNormFactors(cds, method = "TMM")
 
    # VOOM transformation - applied to counts after TMM normalization
@@ -58,7 +59,7 @@ GP.preprocess.read.counts <- function(gct, cls, voom.transform,
       gct$data <- dv$E
       gct$row.descriptions <- unlist(dv$genes)
    } else {
-      # This is dubious: probably never need to turn off voom.
+      # This is not implemented yet; it's an open question whether we'll allow this.
       gct$data <- d$counts
       gct$row.descriptions <- unlist(d$genes)
    }
