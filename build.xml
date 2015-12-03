@@ -9,7 +9,7 @@
 		<antcall target="prezip" />
 		<zip destfile="${dest.dir}/${ant.project.name}.zip" whenempty="fail" defaultexcludes="true">
             <fileset dir="src" includes="*.R" />
-            <fileset dir="." includes="manifest, r.package.info, *.html" excludes="gpunit/**" />
+            <fileset dir="." includes="manifest, r.package.info, *.html, paramgroups.json" excludes="gpunit/**" />
         </zip>
 		<antcall target="postzip" />
 	</target>

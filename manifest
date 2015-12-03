@@ -1,7 +1,8 @@
 #Thu Nov 19 16:31:43 EST 2015
 name=PreprocessReadCounts
 commandLine=<R3.1_Rscript> --no-save --quiet --slave --no-restore <libdir>run_gp_preprocess_read_counts.R <libdir> \
-    --input.file\=<input.file> --cls.file\=<cls.file> --output.file\=<output.file> 
+    --input.file\=<input.file> --cls.file\=<cls.file> --output.file\=<output.file> \
+    --expression.value.filter.threshold=<expression.value.filter.threshold>
 license=
 taskDoc=doc.html
 fileFormat=gct
@@ -9,10 +10,11 @@ taskType=Preprocess & Utilities
 os=any
 quality=preproduction
 privacy=public
-description=Performs several preprocessing steps on RNA-Seq count data in a GCT file.
+description=Preprocess RNA-Seq count data in a GCT file so that it is suitable for use in GenePattern analyses.
 version=
 minGenePatternVersion=
 language=R3.1.3
+cpuType=any
 author=Arthur Liberzon, David Eby, Broad Institute
 
 p1_default_value=
@@ -28,7 +30,7 @@ p1_type=java.io.File
 p1_value=
 
 p2_default_value=
-p2_description=A CLS file specifying the phenotype classes for the samples in the GCT file.  
+p2_description=A categorical CLS file specifying the phenotype classes for the samples in the GCT file.  
 p2_fileFormat=cls
 p2_numValues=1
 p2_MODE=IN
@@ -46,6 +48,14 @@ p3_optional=
 p3_prefix_when_specified=
 p3_type=java.lang.String
 p3_value=
+
+p4_default_value=1
+p4_description=Threshold to use when filtering CPM expression values; rows are kept only if the values (in CPM) for all columns are greater than this threshold
+p4_name=expression.value.filter.threshold
+p4_optional=
+p4_prefix_when_specified=
+p4_type=java.lang.Float
+p4_value=
 
 requiredPatchLSIDs=
 requiredPatchURLs=

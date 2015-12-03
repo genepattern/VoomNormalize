@@ -1,0 +1,5 @@
+[{name: "Basic parameters", 
+  parameters: ["input.file", "cls.file", "output.file"]}, 
+ {name: "Advanced parameters", hidden: true, 
+  parameters: ["expression.value.filter.threshold"]}
+]
