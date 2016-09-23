@@ -1,0 +1,15 @@
+#lsid=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00355:0.6
+#
+name: PreprocessReadCounts - Defaults with Example Data
+description: runs PreprocessReadCounts with data from documentation
+module: PreprocessReadCounts
+params:
+       input.file: "<%gpunit.testData%>/example_data/modules/PreprocessReadCounts/input/MergedHTSeqCounts_GSE52778.gct"
+       cls.file: "<%gpunit.testData%>/example_data/modules/PreprocessReadCounts/input/MergedHTSeqCounts_GSE52778.cls"
+       output.file: "<input.file_basename>.preprocessed.gct"
+       expression.value.filter.threshold: "5"
+assertions:
+        numFiles: 2
+        files:
+            "MergedHTSeqCounts_GSE52778.preprocessed.gct": !!null
+            "stdout.txt": !!null
