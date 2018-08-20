@@ -1,5 +1,6 @@
 #Thu Nov 19 16:31:43 EST 2015
 name=PreprocessReadCounts
+job.docker.image=genepattern/docker-r-3-13:0.1
 commandLine=<R3.1_Rscript> --no-save --quiet --slave --no-restore <libdir>run_gp_preprocess_read_counts.R <libdir> \
     --input.file\=<input.file> --cls.file\=<cls.file> --output.file\=<output.file> \
     --expression.value.filter.threshold=<expression.value.filter.threshold>
@@ -11,7 +12,6 @@ os=any
 quality=preproduction
 privacy=public
 description=Preprocess RNA-Seq count data in a GCT file so that it is suitable for use in GenePattern analyses.
-version=
 minGenePatternVersion=
 language=R3.1.3
 cpuType=any
@@ -62,3 +62,4 @@ requiredPatchURLs=
 
 LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00346\:999999999
 publicationDate=11/19/2015 16\:31 
+version=added 'job.docker.image=genepattern/docker-r-3-13:0.1' to manifest file
