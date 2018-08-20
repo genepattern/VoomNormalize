@@ -1,5 +1,6 @@
 #Thu Nov 19 16:31:43 EST 2015
 name=PreprocessReadCounts
+LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:0.7.2
 job.docker.image=genepattern/docker-r-3-13:0.1
 commandLine=<R3.1_Rscript> --no-save --quiet --slave --no-restore <libdir>run_gp_preprocess_read_counts.R <libdir> \
     --input.file\=<input.file> --cls.file\=<cls.file> --output.file\=<output.file> \
@@ -57,9 +58,4 @@ p4_prefix_when_specified=
 p4_type=java.lang.Float
 p4_value=
 
-requiredPatchLSIDs=
-requiredPatchURLs=
-
-LSID=urn\:lsid\:broad.mit.edu\:cancer.software.genepattern.module.analysis\:00346\:999999999
-publicationDate=11/19/2015 16\:31 
 version=added 'job.docker.image=genepattern/docker-r-3-13:0.1' to manifest file
