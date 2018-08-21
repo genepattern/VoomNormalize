@@ -1,8 +1,7 @@
 #Thu Nov 19 16:31:43 EST 2015
 name=PreprocessReadCounts
-LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:0.7.3
-#job.docker.image=genepattern/docker-r-3-13:0.1
-job.docker.image=local/preprocessdataset:0.7.3
+LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:0.7
+job.docker.image=genepattern/preprocessreadcounts:v0.7-pre.4
 
 commandLine=Rscript --no-save --quiet --slave --no-restore <libdir>run_gp_preprocess_read_counts.R <libdir> \
     --input.file\=<input.file> --cls.file\=<cls.file> --output.file\=<output.file> \
@@ -60,4 +59,4 @@ p4_prefix_when_specified=
 p4_type=java.lang.Float
 p4_value=
 
-version=set commandLine=Rscript ... (was <R3.1_Rscript> ...)
+version=set 'job.docker.image=genepattern/preprocessreadcounts'; containerize R packages
