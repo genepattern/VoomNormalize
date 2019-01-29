@@ -1,6 +1,7 @@
-#Thu Nov 19 16:31:43 EST 2015
+#Thu Jan 29 13:16:06 PST 2019
 name=PreprocessReadCounts
-LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:0.7
+LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:0.8
+#probably not worth it to change the name of the docker image
 job.docker.image=genepattern/preprocessreadcounts:v0.7-pre.4
 
 commandLine=Rscript --no-save --quiet --slave --no-restore <libdir>run_gp_preprocess_read_counts.R <libdir> \
@@ -32,7 +33,7 @@ p1_type=java.io.File
 p1_value=
 
 p2_default_value=
-p2_description=A categorical CLS file specifying the phenotype classes for the samples in the GCT file.  
+p2_description=A categorical CLS file specifying the phenotype classes for the samples in the GCT file.
 p2_fileFormat=cls
 p2_numValues=1
 p2_MODE=IN
@@ -59,4 +60,4 @@ p4_prefix_when_specified=
 p4_type=java.lang.Float
 p4_value=
 
-version=set 'job.docker.image=genepattern/preprocessreadcounts'; containerize R packages
+version=Rename PreprocessReadCounts to VoomNormalize
