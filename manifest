@@ -1,5 +1,5 @@
 #Thu Jan 29 13:16:06 PST 2019
-name=PreprocessReadCounts
+name=VoomNormalize
 LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:0.8
 #probably not worth it to change the name of the docker image
 job.docker.image=genepattern/preprocessreadcounts:v0.7-pre.4
