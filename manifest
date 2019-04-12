@@ -1,6 +1,6 @@
 #Thu Jan 29 13:16:06 PST 2019
 name=VoomNormalize
-LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:0.8
+LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:0.9
 #probably not worth it to change the name of the docker image
 job.docker.image=genepattern/preprocessreadcounts:v0.7-pre.4
 
@@ -14,7 +14,7 @@ taskType=Preprocess & Utilities
 os=any
 quality=preproduction
 privacy=public
-description=Preprocess RNA-Seq count data in a GCT file so that it is suitable for use in GenePattern analyses.
+description=Preprocess RNA-Seq count data in a GCT file so that it is suitable for use in GenePattern analyses. Formerly called "PreprocessReadCounts"
 minGenePatternVersion=
 language=R3.1.3
 cpuType=any
@@ -60,4 +60,4 @@ p4_prefix_when_specified=
 p4_type=java.lang.Float
 p4_value=
 
-version=Rename PreprocessReadCounts to VoomNormalize
+version=Rename PreprocessReadCounts to VoomNormalize -- adding this to the description
