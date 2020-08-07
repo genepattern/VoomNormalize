@@ -31,16 +31,17 @@ opt <- parse_args(OptionParser(option_list=option_list), positional_arguments=TR
 print(opt)
 opts <- opt$options
 
-source(file.path(libdir, "common.R"))
-source(file.path(libdir, "gp_preprocess_read_counts.R"))
+source(file.path("/module", "common.R"))
+source(file.path("/module", "gp_preprocess_read_counts.R"))
 
 expression.value.filter.threshold <- as.numeric(opts$expression.value.filter.threshold)
 
 # Load the GCT and CLS.
+print(opts$input.file)
 gct <- read.gct(opts$input.file)
 cls <- read.cls(opts$cls.file)
 
-GP.preprocess.read.counts(gct, cls, opts$voom.transform, 
+GP.preprocess.read.counts(gct, cls, opts$voom.transform,
                           expression.value.filter.threshold, opts$output.file)
 
 sessionInfo()

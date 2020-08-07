@@ -1,8 +1,9 @@
 #Thu Jan 29 13:16:06 PST 2019
 name=VoomNormalize
-LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:0.9
+LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:1.0
+
 #probably not worth it to change the name of the docker image
-job.docker.image=genepattern/preprocessreadcounts:v0.7-pre.4
+job.docker.image=genepattern/voomnormalize:1.0
 
 commandLine=Rscript --no-save --quiet --slave --no-restore <libdir>run_gp_preprocess_read_counts.R <libdir> \
     --input.file\=<input.file> --cls.file\=<cls.file> --output.file\=<output.file> \
@@ -60,4 +61,4 @@ p4_prefix_when_specified=
 p4_type=java.lang.Float
 p4_value=
 
-version=Rename PreprocessReadCounts to VoomNormalize -- adding this to the description
+version=Creating anti-logged normalized values as one of the outputs
