@@ -64,7 +64,7 @@ GP.preprocess.read.counts <- function(gct, cls, voom.transform,
       gct$row.descriptions <- unlist(d$genes)
    }
    print(output.file)
-   write.gct(gct, file.path(getwd(), paste(output.file,'_log2',sep='')))
+   write.gct(gct, file.path(getwd(), paste('log2_',output.file,sep='')))
    # Anti-log the gct data
 
    gct$data <- round(2^(gct$data),2)
