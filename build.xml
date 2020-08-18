@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Ant build file -->
 
-<project basedir="." default="create-zip" name="PreprocessReadCounts">
+<project basedir="." default="create-zip" name="VoomNormalize">
 	<property name="dirOffset" value="../common_module_code" />
 	<import file="${dirOffset}/commontargets.xml" />
 

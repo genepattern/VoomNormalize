@@ -1,3 +1,15 @@
+#updated after building 1.2
+#Tue, 18 Aug 2020 12:43:32 -0400
+#updated after building 1.1
+#Tue, 18 Aug 2020 12:36:27 -0400
+#prerelease version number
+#Mon, 10 Aug 2020 17:51:09 -0400
+#updated after building 0.9
+#Fri, 12 Apr 2019 16:14:40 -0400
+#updated after building 0.8
+#Tue, 29 Jan 2019 17:08:37 -0500
+#updated after building 0.7
+#Mon, 20 Aug 2018 21:24:47 -0400
 #updated after building 0.6
 #Thu, 03 Dec 2015 17:37:24 -0500
 #updated after building 0.5
@@ -6,4 +18,4 @@
 #Mon, 23 Nov 2015 20:04:00 -0500
 #updated after building 0.1
 #Thu, 19 Nov 2015 03:27:15 -0500
-prerelease.number=7
+prerelease.number=3

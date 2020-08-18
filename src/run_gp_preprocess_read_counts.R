@@ -1,12 +1,4 @@
-## The Broad Institute
-## SOFTWARE COPYRIGHT NOTICE AGREEMENT
-## This software and its documentation are copyright (2015) by the
-## Broad Institute/Massachusetts Institute of Technology. All rights are
-## reserved.
-##
-## This software is supplied without any warranty or guaranteed support
-## whatsoever. Neither the Broad Institute nor MIT can be responsible for its
-## use, misuse, or functionality.
+# Copyright (c) 2003-2020 Regents of the University of California and Broad Institute. All rights reserved.
 
 suppressMessages(suppressWarnings(library(getopt)))
 suppressMessages(suppressWarnings(library(optparse)))
@@ -31,16 +23,17 @@ opt <- parse_args(OptionParser(option_list=option_list), positional_arguments=TR
 print(opt)
 opts <- opt$options
 
-source(file.path(libdir, "common.R"))
-source(file.path(libdir, "gp_preprocess_read_counts.R"))
+source(file.path("/module", "common.R"))
+source(file.path("/module", "gp_preprocess_read_counts.R"))
 
 expression.value.filter.threshold <- as.numeric(opts$expression.value.filter.threshold)
 
 # Load the GCT and CLS.
+print(opts$input.file)
 gct <- read.gct(opts$input.file)
 cls <- read.cls(opts$cls.file)
 
-GP.preprocess.read.counts(gct, cls, opts$voom.transform, 
+GP.preprocess.read.counts(gct, cls, opts$voom.transform,
                           expression.value.filter.threshold, opts$output.file)
 
 sessionInfo()
