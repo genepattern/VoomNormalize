@@ -1,4 +1,4 @@
-# VoomNormalize (v1.0)
+# VoomNormalize (v1.2)
 
 Preprocess RNA-Seq count data in a GCT file so that it is suitable for use in GenePattern analyses.
 

@@ -1,6 +1,6 @@
 #Mon August 10 10:47:06 PST 2020
 name=VoomNormalize
-LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:1.0
+LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00346:1.2
 
 job.docker.image=genepattern/voomnormalize:1.0
 
@@ -60,4 +60,4 @@ p4_prefix_when_specified=
 p4_type=java.lang.Float
 p4_value=
 
-version=Creating anti-logged normalized values as one of the outputs
+version=Creating anti-logged normalized values as one of the outputs & fixing documentation
