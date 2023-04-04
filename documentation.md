@@ -60,9 +60,11 @@ A GCT file containing the log2 normalized & preprocessed dataset.  Note that thi
 
 Input:
 
-- ftp://gpftp.broadinstitute.org/example_data/modules/PreprocessReadCounts/input/MergedHTSeqCounts_GSE52778.gct  
+- https://datasets.genepattern.org/gpftp/example_data/modules/PreprocessReadCounts/input/MergedHTSeqCounts_GSE52778.gct  
 
-- ftp://gpftp.broadinstitute.org/example_data/modules/PreprocessReadCounts/input/MergedHTSeqCounts_GSE52778.cls  
+- https://datasets.genepattern.org/gpftp/example_data/modules/PreprocessReadCounts/input/MergedHTSeqCounts_GSE52778.cls  
+
+
 
 ## Requirements
 
